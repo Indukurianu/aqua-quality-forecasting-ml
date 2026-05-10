@@ -30,6 +30,12 @@ This project focuses on analyzing and forecasting aqua/water quality parameters 
 
 ## Results
 The system predicts aqua quality conditions based on historical data and generated accurate forecasting results.
+## Output Screenshots
+### Prediction Result
+![Prediction](screenshots/output2,3,4,5.png)
+
+### Accuracy Graph
+![Accuracy](screenshots/output1.png)
 
 ## Future Improvements
 - Real-time IoT integration
