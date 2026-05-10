@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Water Quality AI System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:#fff;
+overflow:hidden;
+}
+
+/* ANIMATION BACKGROUND GLOW */
+body::before{
+content:'';
+position:absolute;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#00c6ff55,transparent);
+top:-100px;
+left:-100px;
+}
+
+body::after{
+content:'';
+position:absolute;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#00f26055,transparent);
+bottom:-100px;
+right:-100px;
+}
+
+/* CONTAINER */
+.container{
+position:relative;
+z-index:1;
+max-width:700px;
+padding:50px 40px;
+border-radius:25px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(18px);
+box-shadow:0 15px 50px rgba(0,0,0,0.5);
+text-align:center;
+animation:fadeIn 1s ease-in-out;
+}
+
+/* TITLE */
+h1{
+font-size:30px;
+font-weight:700;
+margin-bottom:15px;
+line-height:1.4;
+background:linear-gradient(90deg,#00f260,#0575e6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* SUBTITLE */
+h2{
+font-size:16px;
+font-weight:400;
+margin-bottom:30px;
+color:#dcdcdc;
+}
+
+/* BUTTONS */
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 35px;
+border-radius:40px;
+font-size:16px;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
+cursor:pointer;
+}
+
+/* PRIMARY */
+.btn-primary{
+background:linear-gradient(135deg,#00f260,#0575e6);
+color:#fff;
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* SECONDARY */
+.btn-secondary{
+border:2px solid #00c6ff;
+color:#00c6ff;
+}
+
+.btn-secondary:hover{
+background:#00c6ff;
+color:#000;
+transform:translateY(-3px);
+}
+
+/* FOOTER */
+.footer{
+margin-top:25px;
+font-size:13px;
+color:#aaa;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+💧 Data Driven Analysis and Forecasting of Aqua Water Quality  
+Using Machine Learning Models
+</h1>
+
+<h2>
+AI-powered system using Random Forest, Support Vector Machine, and Neural Networks  
+to predict water safety and quality.
+</h2>
+
+<a href="{{ url_for('signup') }}" class="btn btn-primary">📝 Create Account</a>
+<a href="{{ url_for('signin') }}" class="btn btn-secondary">🔐 Sign In</a>
+
+<div class="footer">
+Smart Water Quality Monitoring • AI-Based Environmental Intelligence
+</div>
+
+</div>
+
+</body>
+</html>

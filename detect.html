@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Water Potability Prediction</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+display:flex;
+justify-content:center;
+align-items:center;
+color:#fff;
+padding:20px;
+}
+
+/* NAV */
+.nav{
+position:absolute;
+top:20px;
+right:30px;
+}
+
+.nav button{
+padding:10px 25px;
+margin-left:10px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+color:#fff;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.nav button:hover{
+transform:scale(1.05);
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* CARD */
+.card{
+width:750px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+padding:40px;
+border-radius:20px;
+box-shadow:0 8px 30px rgba(0,0,0,0.3);
+}
+
+.card h2{
+text-align:center;
+margin-bottom:25px;
+}
+
+/* GRID FORM */
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px 20px;
+}
+
+/* FIELD */
+.field{
+display:flex;
+flex-direction:column;
+}
+
+label{
+font-size:13px;
+margin-bottom:5px;
+}
+
+input{
+padding:10px;
+border:none;
+border-radius:10px;
+background:rgba(255,255,255,0.2);
+color:#fff;
+outline:none;
+}
+
+/* BUTTON */
+.submit-btn{
+width:100%;
+padding:12px;
+margin-top:25px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#00f260,#0575e6);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.submit-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+.form-grid{
+grid-template-columns:1fr;
+}
+.card{
+width:100%;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+<a href="/"><button>Home</button></a>
+<a href="/train"><button>Train</button></a>
+</div>
+
+<!-- CARD -->
+<div class="card">
+
+<h2>💧 Water Potability Prediction</h2>
+
+<form action="/detect_process" method="post">
+
+<div class="form-grid">
+
+<div class="field">
+<label>pH Level</label>
+<input type="number" step="any" name="ph" required>
+</div>
+
+<div class="field">
+<label>Hardness</label>
+<input type="number" step="any" name="Hardness" required>
+</div>
+
+<div class="field">
+<label>Solids</label>
+<input type="number" step="any" name="Solids" required>
+</div>
+
+<div class="field">
+<label>Chloramines</label>
+<input type="number" step="any" name="Chloramines" required>
+</div>
+
+<div class="field">
+<label>Sulfate</label>
+<input type="number" step="any" name="Sulfate" required>
+</div>
+
+<div class="field">
+<label>Conductivity</label>
+<input type="number" step="any" name="Conductivity" required>
+</div>
+
+<div class="field">
+<label>Organic Carbon</label>
+<input type="number" step="any" name="Organic_carbon" required>
+</div>
+
+<div class="field">
+<label>Trihalomethanes</label>
+<input type="number" step="any" name="Trihalomethanes" required>
+</div>
+
+<div class="field">
+<label>Turbidity</label>
+<input type="number" step="any" name="Turbidity" required>
+</div>
+
+</div>
+
+<button type="submit" class="submit-btn">🔍 Predict Water Quality</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

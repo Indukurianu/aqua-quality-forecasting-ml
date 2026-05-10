@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Train Model - Water Quality AI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:#fff;
+overflow:hidden;
+}
+
+/* GLOW EFFECT */
+body::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#00c6ff55,transparent);
+top:-120px;
+left:-120px;
+}
+
+body::after{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#00f26055,transparent);
+bottom:-120px;
+right:-120px;
+}
+
+/* NAV */
+.nav{
+position:absolute;
+top:20px;
+right:30px;
+z-index:2;
+}
+
+.nav button{
+padding:10px 25px;
+margin-left:10px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.nav button:hover{
+transform:scale(1.05);
+box-shadow:0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* CARD */
+.card{
+position:relative;
+z-index:1;
+width:480px;
+padding:50px;
+border-radius:25px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(18px);
+box-shadow:0 15px 50px rgba(0,0,0,0.5);
+text-align:center;
+animation:fadeIn 1s ease-in-out;
+}
+
+/* TITLE */
+h2{
+font-size:24px;
+margin-bottom:10px;
+background:linear-gradient(90deg,#00f260,#0575e6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+p{
+font-size:14px;
+color:#ccc;
+margin-bottom:20px;
+}
+
+/* FILE INPUT */
+input[type="file"]{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+background:rgba(255,255,255,0.15);
+color:#fff;
+cursor:pointer;
+}
+
+input[type="file"]::file-selector-button{
+background:#00c6ff;
+border:none;
+padding:8px 15px;
+border-radius:8px;
+color:white;
+cursor:pointer;
+margin-right:10px;
+}
+
+/* BUTTON */
+button{
+margin-top:20px;
+width:100%;
+padding:14px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#00f260,#0575e6);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+<a href="/"><button>Home</button></a>
+<a href="/detect"><button>Predict</button></a>
+</div>
+
+<!-- CARD -->
+<div class="card">
+
+<h2>📊 Train Water Quality Model</h2>
+
+<p>Upload your dataset (CSV) to train Machine Learning models for water potability prediction.</p>
+
+<form action="/train_process" method="post" enctype="multipart/form-data">
+
+<input type="file" name="csv_file" accept=".csv" required>
+
+<button type="submit">🚀 Start Training</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

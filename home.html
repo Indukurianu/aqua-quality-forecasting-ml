@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Water Quality Prediction System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* NAVBAR */
+.nav{
+position:absolute;
+top:20px;
+right:30px;
+}
+
+.nav button{
+padding:10px 25px;
+margin-left:10px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+color:#fff;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.nav button:hover{
+transform:scale(1.05);
+box-shadow:0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* MAIN CONTAINER */
+.container{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+padding:60px;
+border-radius:25px;
+text-align:center;
+width:800px;
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* TITLE */
+h1{
+font-size:32px;
+font-weight:700;
+line-height:1.4;
+margin-bottom:20px;
+}
+
+/* SUBTEXT */
+p{
+font-size:17px;
+color:#ddd;
+margin-bottom:30px;
+}
+
+/* BUTTON GROUP */
+.btn-group{
+margin-top:20px;
+}
+
+.btn{
+padding:14px 30px;
+margin:10px;
+border:none;
+border-radius:30px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+/* PRIMARY BUTTON */
+.primary{
+background:linear-gradient(135deg,#00f260,#0575e6);
+color:white;
+}
+
+.primary:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* SECONDARY BUTTON */
+.secondary{
+background:linear-gradient(135deg,#f7971e,#ffd200);
+color:#222;
+}
+
+.secondary:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* FOOTER TAG */
+.footer{
+margin-top:25px;
+font-size:13px;
+color:#aaa;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+<a href="/train"><button>Train Model</button></a>
+<a href="/detect"><button>Predict Water</button></a>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+<h1>
+💧 Data Driven Analysis and Forecasting of Aqua Water Quality  
+Using Machine Learning Models
+</h1>
+
+<p>
+This intelligent system uses advanced Machine Learning algorithms such as 
+Random Forest, Support Vector Machine, and Neural Networks to analyze water quality parameters 
+and predict whether water is safe for drinking.
+</p>
+
+<div class="btn-group">
+<a href="/train"><button class="btn primary">🚀 Train Model</button></a>
+<a href="/detect"><button class="btn secondary">🔍 Predict Water Quality</button></a>
+</div>
+
+<div class="footer">
+AI-Based Water Safety Monitoring System • Smart Environmental Analytics
+</div>
+
+</div>
+
+</body>
+</html>

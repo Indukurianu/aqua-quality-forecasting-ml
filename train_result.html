@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Training Results - Water Quality AI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:#fff;
+padding:30px;
+}
+
+/* NAV */
+.nav{
+position:absolute;
+top:20px;
+right:30px;
+}
+
+.nav button{
+padding:10px 25px;
+margin-left:10px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.nav button:hover{
+transform:scale(1.05);
+box-shadow:0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* TITLE */
+h1{
+text-align:center;
+margin-bottom:30px;
+font-size:32px;
+background:linear-gradient(90deg,#00f260,#0575e6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* GRID LAYOUT */
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+/* CARD */
+.card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(18px);
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* HEADINGS */
+.card h3{
+margin-bottom:10px;
+color:#00f260;
+}
+
+/* TEXT */
+.card p{
+margin:5px 0;
+}
+
+/* TABLE */
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+th,td{
+padding:8px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+/* IMAGES GRID */
+.images{
+margin-top:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.images img{
+width:100%;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+.images img:hover{
+transform:scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+<a href="/"><button>Home</button></a>
+<a href="/detect"><button>Predict</button></a>
+</div>
+
+<h1>📊 Training Results</h1>
+
+<div class="container">
+
+<div class="card">
+<h3>Dataset Shape</h3>
+<p><b>Rows:</b> {{rows}}</p>
+<p><b>Columns:</b> {{cols}}</p>
+</div>
+
+<div class="card">
+<h3>Input Features</h3>
+{% for feature in input_features %}
+<p>{{feature}}</p>
+{% endfor %}
+</div>
+
+<div class="card">
+<h3>Output Label</h3>
+<p>{{output_label}}</p>
+</div>
+
+<div class="card">
+<h3>Model Accuracy</h3>
+{% for k,v in model_scores.items() %}
+<p><b>{{k}}:</b> {{v}}</p>
+{% endfor %}
+</div>
+
+</div>
+
+<!-- IMAGES -->
+<div class="images">
+
+<img src="/static/plots/count.png">
+<img src="/static/plots/corr.png">
+<img src="/static/plots/accuracy.png">
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Water Quality Result</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+padding:30px;
+color:#fff;
+}
+
+/* NAV */
+.nav{
+position:absolute;
+top:20px;
+right:30px;
+}
+
+.nav button{
+padding:10px 25px;
+margin-left:10px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.nav button:hover{
+transform:scale(1.05);
+box-shadow:0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* CARD */
+.card{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(18px);
+padding:45px;
+border-radius:25px;
+text-align:center;
+width:420px;
+box-shadow:0 10px 40px rgba(0,0,0,0.3);
+}
+
+.card h1{
+font-size:28px;
+margin-bottom:20px;
+}
+
+/* RESULT */
+.result{
+font-size:34px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.safe{
+color:#00f5a0;
+}
+
+.unsafe{
+color:#ff4d6d;
+}
+
+/* MESSAGE BOX */
+.message{
+margin-top:15px;
+padding:15px;
+border-radius:12px;
+background:rgba(255,255,255,0.2);
+font-size:15px;
+line-height:1.6;
+}
+
+/* GRID */
+.grid{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+width:90%;
+max-width:1000px;
+}
+
+.grid img{
+width:100%;
+border-radius:15px;
+box-shadow:0 6px 20px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.grid img:hover{
+transform:scale(1.05);
+}
+
+/* BADGE */
+.badge{
+display:inline-block;
+padding:8px 18px;
+border-radius:20px;
+margin-top:10px;
+font-size:14px;
+background:rgba(255,255,255,0.2);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+<a href="/"><button>Home</button></a>
+<a href="/detect"><button>Back</button></a>
+</div>
+
+<!-- RESULT CARD -->
+<div class="card">
+
+<h1>💧 Water Quality Result</h1>
+
+<div class="result {% if is_safe %}safe{% else %}unsafe{% endif %}">
+{{ prediction }}
+</div>
+
+<div class="badge">AI Prediction Output</div>
+
+<div class="message">
+
+{% if is_safe %}
+
+✅ The water is safe for drinking.<br>
+It meets acceptable quality standards and can be used for consumption.<br><br>
+
+<b>Suggestions:</b><br>
+• Maintain proper storage<br>
+• Regular testing recommended<br>
+• Safe for daily usage  
+
+{% else %}
+
+❌ The water is NOT safe for drinking.<br>
+It may contain harmful substances affecting health.<br><br>
+
+<b>Suggestions:</b><br>
+• Use filtration or purification systems<br>
+• Boil water before use<br>
+• Avoid direct consumption  
+
+{% endif %}
+
+</div>
+
+</div>
+
+<!-- GRAPHS -->
+<div class="grid">
+
+<img src="/static/plots/count.png">
+<img src="/static/plots/corr.png">
+<img src="/static/plots/accuracy.png">
+
+</div>
+
+</body>
+</html>
