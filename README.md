@@ -35,7 +35,7 @@ The system predicts aqua quality conditions based on historical data and generat
 ![Prediction](screenshots/output2,3,4,5.png)
 
 ### Accuracy Graph
-![Accuracy](screenshots/output1.png)
+![Accuracy](Screenshots/accuracy-graph.png)
 
 ## Future Improvements
 - Real-time IoT integration
